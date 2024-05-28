@@ -7,7 +7,6 @@ from db_file_storage.model_utils import delete_file_if_needed
 from db_file_storage.model_utils import delete_file
 
 
-
 class Document(models.Model):
     name = models.CharField(max_length=255, blank=True)
     filepath = models.CharField(max_length=255, blank=True)
