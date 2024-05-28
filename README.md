@@ -1,6 +1,6 @@
 # A cloud storage of files
 
-Users are provided with AES encrption of files. <br /> 
+Users are provided with Turbo Code of files. <br /> 
 
 ## Instructions for Web Client:
 
