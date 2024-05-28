@@ -10,10 +10,16 @@ Firstly, create virtual environment
 	source venv/bin/activate
 ```
 
-Install all needed packages
+Install all needed packages for backend
 
 ```
     pip install -r requirements.txt
+```
+
+Install all needed packages for frontend
+
+```
+    npm install
 ```
 
 Run these commands inside the project directory:
