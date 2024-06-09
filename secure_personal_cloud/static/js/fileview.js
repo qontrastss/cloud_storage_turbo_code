@@ -195,7 +195,7 @@ function fileInfo(index){
 	var time = uploadtime[index];
 	var size = filesize[index];
 	var md5 = md5sum[index];
-	var enc = 'AES ' + 'encrypted';
+	var enc = 'New method ' + 'encrypted';
 	var info = React.createClass({
 		displayName: "info",
 		render: function render() {
@@ -227,11 +227,6 @@ function fileInfo(index){
 									React.createElement(
 											"h3",
 											null,
-											"File Size:"
-									),
-									React.createElement(
-											"h3",
-											null,
 											"File Upload Time:"
 									),
 									React.createElement(
@@ -252,11 +247,6 @@ function fileInfo(index){
 											"h3",
 											null,
 											name
-									),
-									React.createElement(
-											"h3",
-											null,
-											"0 bytes"
 									),
 									React.createElement(
 											"h3",
@@ -327,12 +317,13 @@ function closeinfo(){
 };
 
 function keyinput(){
-	if(document.getElementById('key').style.display = 'none') document.getElementById('key').style.display = 'block';
+	if(document.getElementById('key').style.display === 'none') document.getElementById('key').style.display = 'block';
 	else document.getElementById('key').style.display = 'none';
 };
 
 function closekey(){
 	key = $('#keyinput').val();
+	console.log(key)
 	document.getElementById('key').style.display = 'none';
 }
 function downloadfile(index){
@@ -349,14 +340,13 @@ function downloadfile(index){
 
 	var xhttp = new XMLHttpRequest();
 	xhttp.onreadystatechange = function() {
-		if (this.readyState == 4 && this.status == 200) {
+		if (this.readyState === 4 && this.status === 200) {
 			// Create a blob from the response
 			var blob = new Blob([xhttp.response], { type: mime });
 			var link = document.createElement("a");
 			link.download = filenames[index];
 			// Construct the URL for the blob
-			var uri = URL.createObjectURL(blob);
-			link.href = uri;
+			link.href = URL.createObjectURL(blob);
 			document.body.appendChild(link);
 			link.click();
 			// Cleanup the DOM
